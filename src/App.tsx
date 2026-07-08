@@ -379,4 +379,245 @@ export default function App() {
                 </div>
               </div>
               <ul className="space-y-4 mb-8 flex-1">
-                {['Hingga 5 Halaman Web', 'Desain Premium Custom', 'Gratis Domain (.com) 
+                {['Hingga 5 Halaman Web', 'Desain Premium Custom', 'Gratis Domain (.com) & Hosting 1 Tahun', 'SEO Basic & Google Analytics', 'Form Kontak & Live Chat', 'Prioritas Support'].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-neutral-200">
+                    <CheckCircle2 className="text-yellow-500 shrink-0 mt-0.5" size={16} /> 
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <button onClick={handleWA} className="w-full py-4 rounded-full bg-yellow-500 text-black font-bold hover:bg-yellow-400 hover:shadow-[0_0_20px_rgba(234,179,8,0.3)] transition-all mt-auto text-lg">
+                Pilih Gold
+              </button>
+            </motion.div>
+
+            {/* Platinum Package */}
+            <motion.div 
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.5, delay: 0.3 }}
+              className="bg-white/5 border border-white/10 p-8 rounded-3xl hover:border-yellow-500/30 hover:bg-white/[0.07] transition-all flex flex-col h-full relative overflow-hidden group"
+            >
+              <div className="mb-8">
+                <div className="bg-white/10 w-12 h-12 rounded-xl flex items-center justify-center mb-6 text-white group-hover:text-yellow-500 transition-colors">
+                  <Crown size={24} />
+                </div>
+                <h3 className="text-2xl font-bold text-white mb-2">Platinum</h3>
+                <p className="text-neutral-400 text-sm mb-6">Solusi lengkap e-commerce & fitur custom tingkat lanjut.</p>
+                <div className="flex items-baseline gap-1">
+                  <span className="text-sm text-neutral-500">Mulai dari</span>
+                  <span className="text-3xl font-bold text-white">Rp 5jt+</span>
+                </div>
+              </div>
+              <ul className="space-y-4 mb-8 flex-1">
+                {['Halaman Tidak Terbatas (Katalog)', 'Sistem Toko Online / Custom Web App', 'Integrasi Payment Gateway', 'Advanced SEO & Performa Maksimal', 'Desain UI/UX Eksklusif', 'Maintenance 1 Bulan'].map((item, i) => (
+                  <li key={i} className="flex items-start gap-3 text-sm text-neutral-300">
+                    <CheckCircle2 className="text-yellow-500 shrink-0 mt-0.5" size={16} /> 
+                    <span>{item}</span>
+                  </li>
+                ))}
+              </ul>
+              <button onClick={handleWA} className="w-full py-3 rounded-full border border-white/20 text-white font-semibold hover:bg-white/10 transition-colors mt-auto">
+                Pilih Platinum
+              </button>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials */}
+      <section className="py-24 px-6 relative z-10">
+        <div className="max-w-7xl mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Apa Kata <span className={goldText}>Mereka?</span></h2>
+            <p className="text-neutral-400 max-w-2xl mx-auto">Kepercayaan klien adalah prioritas kami. Inilah bukti nyata kepuasan mereka setelah bekerja sama dengan DiTz Store.</p>
+          </div>
+          
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                text: "Awalnya ragu bikin web karena budget mepet, tapi di DiTz Store harganya masuk banget untuk UMKM. Hasilnya? Di luar ekspektasi! Web-nya elegan dan responsif.",
+                name: "Budi Santoso",
+                role: "Owner Kedai Kopi"
+              },
+              {
+                text: "Pelayanannya juara! Mas DiTz sangat sabar menjelaskan prosesnya dari nol. Sekarang brand clothing saya terlihat jauh lebih profesional dan penjualan meningkat.",
+                name: "Rina Amelia",
+                role: "Founder Local Brand"
+              },
+              {
+                text: "Pengerjaan super cepat tapi kualitas nggak main-main. UI/UX-nya smooth banget, persis seperti request saya untuk company profile startup kami. Recommended!",
+                name: "Andreas Wijaya",
+                role: "Tech Entrepreneur"
+              }
+            ].map((testi, idx) => (
+              <motion.div 
+                key={idx}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ duration: 0.5, delay: idx * 0.1 }}
+                className="bg-neutral-900 border border-white/5 p-8 rounded-3xl relative"
+              >
+                <Quote className="text-yellow-500/20 absolute top-6 right-6" size={48} />
+                <div className="flex gap-1 mb-6">
+                  {[...Array(5)].map((_, i) => <Star key={i} size={16} className="fill-yellow-500 text-yellow-500" />)}
+                </div>
+                <p className="text-neutral-300 mb-8 relative z-10 leading-relaxed italic">
+                  "{testi.text}"
+                </p>
+                <div className="flex items-center gap-4">
+                  <div className="w-12 h-12 rounded-full bg-yellow-500/10 flex items-center justify-center text-yellow-500 font-bold border border-yellow-500/20">
+                    {testi.name.charAt(0)}
+                  </div>
+                  <div>
+                    <h4 className="font-bold text-white">{testi.name}</h4>
+                    <span className="text-xs text-neutral-500">{testi.role}</span>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* About Founder */}
+      <section className="py-24 bg-neutral-900/30 border-t border-white/5 relative z-10">
+        <div className="max-w-6xl mx-auto px-6">
+          <motion.div 
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.7 }}
+            className="flex flex-col md:flex-row gap-12 lg:gap-20 items-center"
+          >
+            <div className="w-full md:w-2/5 relative">
+              <div className="aspect-[4/5] rounded-3xl overflow-hidden border-2 border-white/10 relative z-10">
+                <img 
+                  src={CONFIG.images.founder} 
+                  alt="Founder DiTz Store" 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="absolute -bottom-6 -right-6 w-48 h-48 bg-yellow-500/20 rounded-full blur-[50px] pointer-events-none"></div>
+              <div className="absolute top-10 -left-6 bg-neutral-900 border border-white/10 p-4 rounded-2xl shadow-xl shadow-black/50 z-20 flex items-center gap-3">
+                <div className="bg-yellow-500/20 p-2 rounded-lg text-yellow-500">
+                  <Award size={24} />
+                </div>
+                <div>
+                  <div className="text-xs text-neutral-400">Pengalaman</div>
+                  <div className="font-bold text-white text-sm">Web Developer</div>
+                </div>
+              </div>
+            </div>
+            
+            <div className="w-full md:w-3/5">
+              <div className="inline-block px-3 py-1 rounded-full border border-yellow-500/30 bg-yellow-500/10 text-sm font-medium text-yellow-500 mb-6 flex items-center gap-2 w-fit">
+                <span className="w-2 h-2 rounded-full bg-yellow-500"></span>
+                Di Balik DiTz Store
+              </div>
+              <h2 className="text-3xl md:text-5xl font-bold text-white mb-6">Salam Kenal, <br />Saya <span className={goldText}>Founder DiTz Store</span></h2>
+              <div className="space-y-4 text-neutral-400 text-lg leading-relaxed mb-8">
+                <p>
+                  Banyak yang mengira membangun website premium butuh biaya puluhan juta. Padahal, dengan efisiensi teknologi saat ini, UMKM pun berhak memiliki identitas digital yang setara dengan brand besar.
+                </p>
+                <p>
+                  Saya merintis DiTz Store di usia muda dengan semangat dan passion di bidang pengembangan web. Meski terbilang muda, dedikasi dan jam terbang saya dalam menangani berbagai studi kasus UI/UX dan pemrograman tidak kalah dengan agensi besar.
+                </p>
+                <p>
+                  Bagi saya, website bukan sekadar kumpulan kode. Ini adalah 'wajah' bisnis Anda di internet. Kepercayaan Anda adalah amanah yang saya jaga dengan memberikan hasil yang maksimal, elegan, dan fungsional.
+                </p>
+              </div>
+              <div className="flex items-center gap-6 pt-4 border-t border-white/10">
+                <div>
+                  <h4 className="text-white font-bold text-xl">100%</h4>
+                  <span className="text-sm text-neutral-500">Fokus Kualitas</span>
+                </div>
+                <div className="w-px h-10 bg-white/10"></div>
+                <div>
+                  <h4 className="text-white font-bold text-xl">UMKM</h4>
+                  <span className="text-sm text-neutral-500">Ramah Budget</span>
+                </div>
+                <div className="w-px h-10 bg-white/10"></div>
+                <div>
+                  <h4 className="text-white font-bold text-xl">24/7</h4>
+                  <span className="text-sm text-neutral-500">Support Klien</span>
+                </div>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* CTA Section */}
+      <section className="py-24 relative overflow-hidden border-t border-white/5">
+        <div className="absolute inset-0 bg-yellow-500/5"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-yellow-500/10 blur-[150px] pointer-events-none"></div>
+        
+        <div className="max-w-4xl mx-auto px-6 text-center relative z-10">
+          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">Siap Membangun <span className={goldText}>Website Impian?</span></h2>
+          <p className="text-xl text-neutral-400 mb-10 max-w-2xl mx-auto">
+            Jangan biarkan kompetitor mendahului Anda. Tingkatkan kredibilitas brand Anda hari ini dengan website profesional dari DiTz Store.
+          </p>
+          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+            <button 
+              onClick={handleWA}
+              className="w-full sm:w-auto flex items-center justify-center gap-2 bg-yellow-500 text-black px-8 py-4 rounded-full font-bold text-lg hover:bg-yellow-400 hover:shadow-[0_0_30px_rgba(234,179,8,0.3)] transition-all"
+            >
+              <MessageCircle size={20} />
+              Chat WhatsApp Sekarang
+            </button>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t border-white/5 bg-[#030303] pt-16 pb-8">
+        <div className="max-w-7xl mx-auto px-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-12">
+            <div>
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-8 h-8 rounded bg-gradient-to-br from-yellow-500 to-yellow-700 flex items-center justify-center">
+                  <span className="text-black font-extrabold text-sm tracking-tighter">DZ</span>
+                </div>
+                <span className="font-bold text-xl text-white">DiTz <span className={goldText}>Store</span></span>
+              </div>
+              <p className="text-neutral-400 max-w-sm mb-6">
+                Penyedia layanan jasa pembuatan website profesional, berkualitas premium, dan terpercaya untuk UMKM serta Brand.
+              </p>
+            </div>
+            
+            <div className="md:text-right">
+              <h4 className="font-semibold text-white mb-6 text-lg">Hubungi Kami</h4>
+              <ul className="space-y-4 flex flex-col md:items-end">
+                <li>
+                  <button onClick={handleWA} className="flex items-center gap-3 text-neutral-400 hover:text-yellow-500 transition-colors group">
+                    <span className="group-hover:underline">0877-3943-5486</span>
+                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-yellow-500/10">
+                      <MessageCircle size={18} />
+                    </div>
+                  </button>
+                </li>
+                <li>
+                  <button onClick={handleEmail} className="flex items-center gap-3 text-neutral-400 hover:text-yellow-500 transition-colors group">
+                    <span className="group-hover:underline">{email}</span>
+                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center group-hover:bg-yellow-500/10">
+                      <Mail size={18} />
+                    </div>
+                  </button>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
+          <div className="border-t border-white/5 pt-8 text-center text-sm text-neutral-600">
+            <p>&copy; {new Date().getFullYear()} DiTz Store. All rights reserved.</p>
+            <p className="mt-1">Premium Quality, Trusted Choice.</p>
+          </div>
+        </div>
+      </footer>
+    </div>
+  );
+}
+
