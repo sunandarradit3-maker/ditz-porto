@@ -1,0 +1,6 @@
+{
+  "name": "DiTz Store Portfolio",
+  "description": "Portofolio jasa pembuatan website premium untuk UMKM dan brand oleh DiTz Store.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
