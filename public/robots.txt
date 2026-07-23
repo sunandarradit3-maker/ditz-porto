@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://ditz-porto.vercel.app/sitemap.xml
